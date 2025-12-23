@@ -57,15 +57,31 @@ export default function OverlayMenu({ open, onClose, links }) {
       ref={overlayRef}
       className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm"
       aria-hidden={!open}
-      onMouseDown={(e) => {
-        if (e.target === overlayRef.current) onClose();
-      }}
+onMouseDown={(e) => {
+  if (!panelRef.current.contains(e.target)) {
+    onClose();
+  }
+}}
+
     >
       <div className="flex h-full w-full items-center justify-center px-6">
-        <div
-          ref={panelRef}
-          className="w-full max-w-xl rounded-3xl bg-white/10 p-10 ring-1 ring-white/15"
-        >
+<div
+  ref={panelRef}
+  className="relative w-full max-w-xl rounded-3xl bg-white/10 p-10 ring-1 ring-white/15"
+>
+  {/* Close button */}
+  <button
+    type="button"
+    aria-label="Close menu"
+    onClick={onClose}
+    className="absolute right-5 top-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20"
+  >
+    <span className="relative block h-4 w-4">
+      <span className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rotate-45 bg-white" />
+      <span className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 -rotate-45 bg-white" />
+    </span>
+  </button>
+
           <nav className="flex flex-col items-center gap-7 text-white">
             {links.map((item) => (
               <Link
