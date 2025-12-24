@@ -15,75 +15,64 @@ const nav = [
 export default function Header() {
   const links = useMemo(() => nav, []);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for background
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
-    if (open) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
     <>
-      <div className="absolute inset-x-0 top-0 z-30">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-8 md:px-10">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+      <header 
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-black/20 backdrop-blur-lg py-4" : "bg-transparent py-8"
+        }`}
+      >
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 md:px-10">
+          <Link href="/" className="flex items-center transition-opacity hover:opacity-90">
             <Image
-              src="/new-logo-1.png"
+              src="/new-logo-1.png" // Ensure this is the white-text version
               alt="Sarawak Living Advisor"
-              width={200}
-              height={52}
+              width={220}
+              height={50}
               priority
-              className="h-auto w-[180px] md:w-[280px]"
+              className="h-auto w-[160px] md:w-[220px]"
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden items-center gap-14 text-[17px] font-medium tracking-wide text-white/85 md:flex">
+          <nav className="hidden items-center gap-10 text-[15px] font-semibold uppercase tracking-widest md:flex">
             {links.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative py-1 text-white/85 hover:text-white transition-colors duration-200"
+                className="group relative text-white/80 transition-colors hover:text-white"
               >
                 {item.label}
-                {/* underline grows left to right */}
-                <span className="pointer-events-none absolute left-0 -bottom-1 h-[2px] w-full origin-left scale-x-0 bg-white/90 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                <span className="absolute -bottom-1 left-0 h-[2px] w-full origin-right scale-x-0 bg-white transition-transform duration-300 group-hover:origin-left group-hover:scale-x-100" />
               </Link>
             ))}
           </nav>
 
-          {/* Mobile: hamburger (replaces the old Contact button) */}
           <button
             type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15"
+            className="md:hidden flex h-10 w-10 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur-md"
           >
-            <span className="relative block h-5 w-6">
-              <span
-                className={`absolute left-0 top-[2px] h-[2px] w-full bg-white transition-transform duration-200 ${
-                  open ? "translate-y-[8px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-[9px] h-[2px] w-full bg-white transition-opacity duration-200 ${
-                  open ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-[16px] h-[2px] w-full bg-white transition-transform duration-200 ${
-                  open ? "-translate-y-[6px] -rotate-45" : ""
-                }`}
-              />
-            </span>
+            <div className="flex flex-col gap-1.5">
+              <span className={`h-0.5 w-5 bg-white transition-all ${open ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`h-0.5 w-5 bg-white transition-all ${open ? "opacity-0" : ""}`} />
+              <span className={`h-0.5 w-5 bg-white transition-all ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+            </div>
           </button>
         </div>
-      </div>
-
+      </header>
       <OverlayMenu open={open} onClose={() => setOpen(false)} links={links} />
     </>
   );

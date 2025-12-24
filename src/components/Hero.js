@@ -64,7 +64,7 @@ export default function Hero() {
         >
           <path
             d="M0,64 C240,96 480,96 720,64 960,32 1200,32 1440,64 L1440,120 L0,120 Z"
-            fill="white"
+            fill="#fafafa"
           />
         </svg>
       </div>

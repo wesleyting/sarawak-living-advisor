@@ -17,7 +17,7 @@ const baskerville = Libre_Baskerville({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${baskerville.variable}`}>
-      <body className="min-h-screen bg-white text-zinc-900 antialiased">
+      <body className="min-h-screen bg-zinc-50 text-zinc-900 antialiased">
         {children}
       </body>
     </html>

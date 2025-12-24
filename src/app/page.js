@@ -1,5 +1,8 @@
 import Hero from "@/components/Hero";
 import Container from "@/components/Container";
+import GlobalReach from "@/components/GlobalReach";
+import WhoThisIsFor from "@/components/WhoThisIsFor";
+import CinematicVideo from "@/components/CinematicVideo";
 
 export const metadata = {
   title: "Home",
@@ -10,6 +13,9 @@ export default function Home() {
     <>
       {/* Hero section with overlay navigation */}
       <Hero />
+      <GlobalReach />
+      <WhoThisIsFor />
+      <CinematicVideo />
 
       {/* Who this is for */}
       <section className="py-20">
