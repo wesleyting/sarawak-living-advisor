@@ -1,0 +1,129 @@
+{
+  "nav": {
+    "howWeWork": "How we work",
+    "faq": "FAQ",
+    "fees": "Fees",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "badge": "Sarawak My Second Home (S MM2H)",
+    "title": "Clarity before commitment.",
+    "subtitle": "Independent guidance for families and retirees planning a long term life in Sarawak.",
+    "ctaPrimary": "Start a conversation",
+    "ctaSecondary": "How we work"
+  },
+
+  "who": {
+    "heading": "Guidance built around your reason for moving.",
+    "intro": "S-MM2H is a major life decision. We help you think through fit, costs, tradeoffs, and next steps with independent clarity.",
+
+    "families": {
+      "title": "Families",
+      "description": "For parents who want a stable base, strong schooling options, and a safe day to day environment for children.",
+      "details": ["International schooling", "Safe neighbourhoods", "Family routine"]
+    },
+
+    "retirees": {
+      "title": "Retirees and semi retirees",
+      "description": "For people planning a slower pace of life with reliable healthcare access and comfortable living costs.",
+      "details": ["Healthcare access", "Nature and leisure", "Calmer pace"]
+    },
+
+    "planners": {
+      "title": "Long term base planning",
+      "description": "For those who want a secure Plan B or a second home in Southeast Asia, with clear next steps and fewer surprises.",
+      "details": ["Location advantage", "Stability and safety", "Residency planning"]
+    },
+
+    "cta": "Start a conversation"
+  },
+   "faq": {
+    "heading": "Frequently asked questions",
+    "intro": "Simple answers to help you decide if Sarawak is a fit, and what the next steps look like.",
+    "tabs": {
+      "families": "Families",
+      "retirees": "Retirees",
+      "programme": "Programme"
+    },
+    "safety": {
+      "title": "Safety and stability",
+      "text": "Sarawak is socially stable and largely free from major natural disasters like earthquakes, hurricanes, or tornadoes, making it a strong long term base for families and retirees."
+    },
+    "sections": {
+      "families": {
+        "kicker": "For families",
+        "title": "Schooling and stability",
+        "summary": "Most family decisions come down to education, routine, and long term stability. These are the questions we get most often.",
+        "items": [
+          {
+            "q": "Is Kuching suitable for raising children long term",
+            "a": "Yes. Kuching is generally calm, multicultural, and family friendly. Many families prioritise safety, routine, and a stable day to day lifestyle."
+          },
+          {
+            "q": "Are there international schools and English based options",
+            "a": "Yes. Kuching has multiple international schooling options and English based curricula are available, depending on the school and programme."
+          },
+          {
+            "q": "How much do international schools usually cost",
+            "a": "As a rough range, international school fees can be around RM25,000 to RM45,000 per year depending on grade and programme."
+          },
+          {
+            "q": "Do we need to buy property to live here",
+            "a": "No. For many plans, renting is a valid path. Property purchase is not compulsory for long term living decisions."
+          }
+        ]
+      },
+      "retirees": {
+        "kicker": "For retirees",
+        "title": "Comfort and healthcare",
+        "summary": "Retirees usually care about healthcare access, cost control, and daily comfort without stress.",
+        "items": [
+          {
+            "q": "Is healthcare in Kuching reliable",
+            "a": "Kuching has a mix of public and private hospitals and clinics. Many retirees find the quality strong relative to cost."
+          },
+          {
+            "q": "Can retirement funds go further in Sarawak",
+            "a": "Often yes. Lower daily living costs can allow a comfortable lifestyle while still maintaining quality and convenience."
+          },
+          {
+            "q": "Is Kuching a fast paced city",
+            "a": "Not usually. Kuching is known for a calmer pace and is often preferred by those seeking slower living."
+          },
+          {
+            "q": "Do I need to worry about long term medical expenses",
+            "a": "Costs vary by individual needs, but many people find healthcare more affordable than major global cities. Planning and insurance choices still matter."
+          }
+        ]
+      },
+      "programme": {
+        "kicker": "Programme basics",
+        "title": "S MM2H clarity",
+        "summary": "This is the practical side: eligibility, process, timelines, and what support looks like.",
+        "items": [
+          {
+            "q": "What is S MM2H in simple terms",
+            "a": "It is a long term residency pathway under Sarawak with specific requirements. It is often used by families and retirees planning a second home or long term base."
+          },
+          {
+            "q": "Do you submit applications directly",
+            "a": "We provide independent guidance and planning support. Formal applications are typically handled by government recognised licensed partners."
+          },
+          {
+            "q": "How do I know if I should even apply",
+            "a": "Start with fit first: lifestyle goals, budget, healthcare needs, and schooling plans. Then we work backwards into requirements and next steps."
+          },
+          {
+            "q": "What should I prepare before speaking to a partner",
+            "a": "A clear plan: your target timeline, budget, preferred living area, whether you are renting or buying, and any schooling or healthcare priorities."
+          }
+        ]
+      }
+    },
+    "footer": {
+      "prompt": "Still unsure which path fits your situation",
+      "cta": "Start a conversation"
+    }
+  }
+}
